@@ -5,10 +5,47 @@
  */
 package application;
 
+import java.util.Random;
+
 /**
  *
  * @author alexe
  */
-public class TemperatureSensor {
-    
+public class TemperatureSensor implements Sensor {
+
+    private int temp;
+    private boolean onOf;
+
+    public TemperatureSensor() {
+        this.onOf = false;
+        Random random = new Random();
+
+    }
+
+    @Override
+    public boolean isOn() {
+        return onOf;
+    }
+
+    @Override
+    public void setOn() {
+        this.onOf = true;
+    }
+
+    @Override
+    public void setOff() {
+        this.onOf = false;
+    }
+
+    @Override
+    public int read() {
+        if (onOf) {
+            this.temp=new Random().nextInt(61) - 30;
+            return temp;
+        } else {
+            throw new IllegalStateException("Illegal state!");
+        }
+    }
 }
+
+

@@ -3,16 +3,21 @@ package application;
 public class Program {
 
     public static void main(String[] args) {
-        // you can test your classes here:
-        StandardSensor ten = new StandardSensor(10);
-        StandardSensor minusFive = new StandardSensor(-5);
+        Sensor kumpula = new TemperatureSensor();
+        Sensor kaisaniemi = new TemperatureSensor();
+        Sensor helsinkiVantaaAirport = new TemperatureSensor();
 
-        System.out.println(ten.read());
-        System.out.println(minusFive.read());
+        AverageSensor helsinkiRegion = new AverageSensor();
+        helsinkiRegion.addSensor(kumpula);
+        helsinkiRegion.addSensor(kaisaniemi);
+        helsinkiRegion.addSensor(helsinkiVantaaAirport);
 
-        System.out.println(ten.isOn());
-        ten.setOff();
-        System.out.println(ten.isOn());
+        helsinkiRegion.setOn();
+        System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+        System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+        System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+
+        System.out.println("readings: " + helsinkiRegion.readings());
     }
 
 }
