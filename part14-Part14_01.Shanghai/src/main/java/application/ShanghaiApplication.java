@@ -2,7 +2,6 @@ package application;
 
 import javafx.application.Application;
 
-import javafx.scene.control.TextField;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.LineChart;

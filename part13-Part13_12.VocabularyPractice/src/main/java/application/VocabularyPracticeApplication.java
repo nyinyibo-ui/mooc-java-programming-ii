@@ -26,7 +26,7 @@ public class VocabularyPracticeApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         // 2. Create the views ("subviews")
-        PracticeView practiceView=new PracticeView(dictionary);
+//        PracticeView practiceView=new PracticeView(dictionary);
         InputView inputView = new InputView(dictionary);
 
         // 3. Create the higher level layout
@@ -48,7 +48,7 @@ public class VocabularyPracticeApplication extends Application {
 
         // 4. Connect the subviews with the buttons. Clicking menu buttons changes the subview.
         enterButton.setOnAction((event) -> layout.setCenter(inputView.getView()));
-        practiceButton.setOnAction((event) -> layout.setCenter(practiceView.getView()));
+//        practiceButton.setOnAction((event) -> layout.setCenter(practiceView.getView()));
 
         // 5. First show the input view
         layout.setCenter(inputView.getView());
